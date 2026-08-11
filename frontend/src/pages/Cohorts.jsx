@@ -1,0 +1,4 @@
+import Panel from '../components/Charts/Panel';
+import { cohorts } from '../data';
+export default function Cohorts(){return <><div className="page-stats"><div><span>Best cohort</span><b>Jul 2026</b></div><div><span>90-day retention</span><b>79.3%</b></div><div><span>Cohort improvement</span><b>+6.8%</b></div></div><Panel title="Cohort retention" subtitle="Percentage of customers retained after acquisition"><div className="cohort-table"><div className="cohort-row cohort-head"><span>Cohort</span><span>Customers</span>{[0,1,2,3,4,5].map(x=><span key={x}>M{x}</span>)}</div>{cohorts.map(row=><div className="cohort-row" key={row.cohort}><b>{row.cohort}</b><span>{row.customers}</span>{[0,1,2,3,4,5].map(i=><span key={i} className="heat" style={row.values[i]?{background:`rgba(91,91,214,${row.values[i]/115})`}:{}}>{row.values[i]&&`${row.values[i]}%`}</span>)}</div>)}</div></Panel></>}
+

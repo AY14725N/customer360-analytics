@@ -1,0 +1,4 @@
+import { MoreHorizontal } from 'lucide-react';
+import { money } from '../../utils/format';
+export default function CustomerTable({ rows }) { return <div className="table-scroll"><table><thead><tr><th>Customer</th><th>Segment</th><th>Lifetime value</th><th>Orders</th><th>Health</th><th>Last active</th><th/></tr></thead><tbody>{rows.map(row=><tr key={row.id}><td><div className="customer-cell"><span>{row.name.split(' ').map(x=>x[0]).join('')}</span><div><b>{row.name}</b><small>{row.id}</small></div></div></td><td><em className={`tag ${row.segment.toLowerCase().replace(' ','-')}`}>{row.segment}</em></td><td>{money(row.value)}</td><td>{row.orders}</td><td><div className="health"><span><i style={{width:`${row.health}%`}}/></span>{row.health}</div></td><td>{row.lastActive}</td><td><MoreHorizontal size={18}/></td></tr>)}</tbody></table></div>; }
+

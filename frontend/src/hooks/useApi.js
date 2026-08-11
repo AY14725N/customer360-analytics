@@ -1,0 +1,13 @@
+import { useEffect, useState } from 'react';
+
+export function useApi(loader) {
+  const [state, setState] = useState({ data: null, loading: true, error: null });
+  useEffect(() => {
+    let active = true;
+    loader().then(data => active && setState({ data, loading: false, error: null }))
+      .catch(error => active && setState({ data: null, loading: false, error }));
+    return () => { active = false; };
+  }, [loader]);
+  return state;
+}
+

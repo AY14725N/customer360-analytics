@@ -1,0 +1,3 @@
+import { Cell, Pie, PieChart, ResponsiveContainer, Tooltip } from 'recharts';
+export default function SegmentChart({ data }) { return <div className="segment-wrap"><div className="donut"><ResponsiveContainer width="100%" height="100%"><PieChart><Pie data={data} dataKey="value" innerRadius={55} outerRadius={78} paddingAngle={3}>{data.map(x=><Cell key={x.name} fill={x.color}/>)}</Pie><Tooltip formatter={v=>`${v}%`}/></PieChart></ResponsiveContainer><div className="donut-center"><b>48.3K</b><span>customers</span></div></div><div className="legend">{data.map(x=><div key={x.name}><i style={{background:x.color}}/><span>{x.name}</span><b>{x.value}%</b></div>)}</div></div>; }
+
