@@ -1,0 +1,40 @@
+.sidebar nav a {
+  border: 0;
+  background: transparent;
+  color: #aeb8cb;
+  border-radius: 9px;
+  padding: 11px 12px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+  background: #252d43;
+  color: white;
+}
+
+.sidebar nav a.active { box-shadow: inset 3px 0 #7778ee; }
+.topbar-title { display: flex; align-items: center; gap: 12px; }
+.menu-button { display: none; width: 38px; height: 38px; border: 1px solid #e2e5ec; border-radius: 9px; background: white; color: #4f596a; }
+.sidebar-backdrop { display: none; }
+.not-found { min-height: 60vh; display: grid; place-content: center; text-align: center; }
+.not-found > span { font: 700 70px Manrope; color: #d9daef; }
+.not-found h2 { font: 700 24px Manrope; margin: 0; color: #202a3a; }
+.not-found p { color: #7b8495; font-size: 13px; }
+.not-found a { justify-self: center; margin-top: 10px; display: flex; align-items: center; gap: 7px; text-decoration: none; color: white; background: #5758cf; border-radius: 9px; padding: 10px 14px; font-size: 12px; }
+
+@media (max-width: 760px) {
+  .app-shell { display: block; }
+  .sidebar { position: fixed; left: 0; z-index: 30; width: 242px; padding: 27px 18px; transform: translateX(-105%); transition: transform .2s ease; box-shadow: 10px 0 40px rgba(10,15,30,.25); }
+  .sidebar.open { transform: translateX(0); }
+  .sidebar .brand > div:not(.brand-mark), .sidebar nav a span { display: block; }
+  .sidebar nav a { justify-content: flex-start; }
+  .sidebar .profile div:not(.avatar), .sidebar .sidebar-bottom > button { display: flex; }
+  .sidebar-backdrop { display: block; position: fixed; inset: 0; z-index: 20; border: 0; background: rgba(15,20,34,.45); }
+  .menu-button { display: grid; place-items: center; }
+  .topbar p { max-width: 220px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+}

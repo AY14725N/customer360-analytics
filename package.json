@@ -15,7 +15,8 @@
     "recharts": "latest",
     "vite": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "react-router-dom": "latest"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "latest",
@@ -24,4 +25,3 @@
     "vitest": "latest"
   }
 }
-

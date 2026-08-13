@@ -1,4 +1,17 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import App from '../../frontend/src/App';
-test('renders the executive dashboard', () => { render(<App/>); expect(screen.getByText('Executive overview')).toBeInTheDocument(); expect(screen.getByText('Revenue performance')).toBeInTheDocument(); });
 
+test('renders the executive dashboard', () => {
+  window.history.pushState({}, '', '/dashboard');
+  render(<App/>);
+  expect(screen.getByText('Executive overview')).toBeInTheDocument();
+  expect(screen.getByText('Revenue performance')).toBeInTheDocument();
+});
+
+test('navigates between routed pages', () => {
+  window.history.pushState({}, '', '/dashboard');
+  render(<App/>);
+  fireEvent.click(screen.getByRole('link', { name: /customers/i }));
+  expect(screen.getByText('Customer intelligence')).toBeInTheDocument();
+  expect(window.location.pathname).toBe('/customers');
+});
