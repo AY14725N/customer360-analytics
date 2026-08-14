@@ -1,8 +1,8 @@
-import { LayoutDashboard, Users, Layers3, RefreshCw, PieChart, ShieldAlert, Settings, HelpCircle } from 'lucide-react';
+import { LayoutDashboard, Users, Layers3, RefreshCw, PieChart, ShieldAlert, Settings, HelpCircle, DatabaseZap } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 
 const items = [
-  ['/dashboard', 'Overview', LayoutDashboard], ['/customers', 'Customers', Users], ['/cohorts', 'Cohorts', Layers3],
+  ['/dashboard', 'Overview', LayoutDashboard], ['/crm-pipeline', 'CRM pipeline', DatabaseZap], ['/customers', 'Customers', Users], ['/cohorts', 'Cohorts', Layers3],
   ['/retention', 'Retention', RefreshCw], ['/segmentation', 'Segmentation', PieChart], ['/churn', 'Churn prediction', ShieldAlert]
 ];
 

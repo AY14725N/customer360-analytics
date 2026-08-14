@@ -9,10 +9,12 @@ import Cohorts from './pages/Cohorts';
 import Retention from './pages/Retention';
 import Segmentation from './pages/Segmentation';
 import ChurnPrediction from './pages/ChurnPrediction';
+import CRMPipeline from './pages/CRMPipeline';
 import NotFound from './pages/NotFound';
 
 export const routes = [
   { path: '/dashboard', title: 'Executive overview', subtitle: 'A unified view of customer health and growth', element: Dashboard },
+  { path: '/crm-pipeline', title: 'CRM data pipeline', subtitle: 'Monitor ingestion, transformation, and customer record quality', element: CRMPipeline },
   { path: '/customers', title: 'Customer intelligence', subtitle: 'Understand every customer relationship', element: Customers },
   { path: '/cohorts', title: 'Cohort analysis', subtitle: 'Track retention across acquisition periods', element: Cohorts },
   { path: '/retention', title: 'Retention analytics', subtitle: 'Measure loyalty, expansion, and durability', element: Retention },

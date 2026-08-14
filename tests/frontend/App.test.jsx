@@ -15,3 +15,12 @@ test('navigates between routed pages', () => {
   expect(screen.getByText('Customer intelligence')).toBeInTheDocument();
   expect(window.location.pathname).toBe('/customers');
 });
+
+test('opens the CRM pipeline from sidebar navigation', () => {
+  window.history.pushState({}, '', '/dashboard');
+  render(<App/>);
+  fireEvent.click(screen.getByRole('link', { name: /crm pipeline/i }));
+  expect(screen.getByText('Customer data flow')).toBeInTheDocument();
+  expect(screen.getByText('Connected sources')).toBeInTheDocument();
+  expect(window.location.pathname).toBe('/crm-pipeline');
+});
